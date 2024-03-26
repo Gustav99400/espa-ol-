@@ -58,7 +58,7 @@ t_INCREMENTO = r'\+\+'
 # Expresion regular para CADENA
 def t_CADENA(t):
     r'"[^"]*"'
-    t.value = t.value[1:-1]  # Elimina las comillas
+    t.value = t.value[1:-1]
     return t
 
 def t_COMENTARIO_LINEA(t):
@@ -72,7 +72,7 @@ def t_COMENTARIO_MULTILINEA(t):
 # Expresiones regulares con acciones asociadas
 def t_IDENTIFICADOR(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value, 'IDENTIFICADOR')  # Chequea si es palabra reservada
+    t.type = reserved.get(t.value, 'IDENTIFICADOR')
     return t
 
 def t_NUMERO(t):
